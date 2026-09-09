@@ -1,0 +1,72 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 _estack = ORIGIN ( RAM ) + LENGTH ( RAM )
+ 8000000  8000000       40     4 .isr_vector
+ 8000000  8000000        0     1         . = ALIGN ( 4 )
+ 8000000  8000000       40     4         Output/startup.o:(.isr_vector)
+ 8000000  8000000       40     1                 vector_table
+ 8000040  8000040        0     1         . = ALIGN ( 4 )
+ 8000040  8000040      264     4 .text
+ 8000040  8000040        0     1         . = ALIGN ( 4 )
+ 8000040  8000040        4     4         Output/startup.o:(.text.Default_Handler)
+ 8000040  8000040        0     1                 $t
+ 8000041  8000041        4     1                 Default_Handler
+ 8000041  8000041        4     1                 NMI_Handler
+ 8000041  8000041        4     1                 HardFault_Handler
+ 8000041  8000041        4     1                 MemManage_Handler
+ 8000041  8000041        4     1                 BusFault_Handler
+ 8000041  8000041        4     1                 UsageFault_Handler
+ 8000041  8000041        4     1                 SVC_Handler
+ 8000041  8000041        4     1                 DebugMon_Handler
+ 8000041  8000041        4     1                 PendSV_Handler
+ 8000041  8000041        4     1                 SysTick_Handler
+ 8000044  8000044       6e     4         Output/startup.o:(.text.Reset_Handler)
+ 8000044  8000044        0     1                 $t
+ 8000045  8000045       6e     1                 Reset_Handler
+ 80000b4  80000b4       50     4         Output/GPIO.o:(.text.GPIO_ConfigInputPullUp)
+ 80000b4  80000b4        0     1                 $t
+ 80000b5  80000b5       50     1                 GPIO_ConfigInputPullUp
+ 8000104  8000104       42     4         Output/GPIO.o:(.text.GPIO_GetConfigRegister)
+ 8000104  8000104        0     1                 $t
+ 8000105  8000105       42     1                 GPIO_GetConfigRegister
+ 8000148  8000148       3e     4         Output/GPIO.o:(.text.GPIO_ConfigOutputPushPull)
+ 8000148  8000148        0     1                 $t
+ 8000149  8000149       3e     1                 GPIO_ConfigOutputPushPull
+ 8000188  8000188        e     4         Output/GPIO.o:(.text.GPIO_ReadLow8)
+ 8000188  8000188        0     1                 $t
+ 8000189  8000189        e     1                 GPIO_ReadLow8
+ 8000198  8000198       2c     4         Output/GPIO.o:(.text.GPIO_WriteHigh8)
+ 8000198  8000198        0     1                 $t
+ 8000199  8000199       2c     1                 GPIO_WriteHigh8
+ 80001c4  80001c4       12     4         Output/RCC.o:(.text.RCC_EnableGPIOA)
+ 80001c4  80001c4        0     1                 $t
+ 80001c5  80001c5       12     1                 RCC_EnableGPIOA
+ 80001d8  80001d8       12     4         Output/RCC.o:(.text.RCC_EnableAFIO)
+ 80001d8  80001d8        0     1                 $t
+ 80001d9  80001d9       12     1                 RCC_EnableAFIO
+ 80001ec  80001ec       18     4         Output/RCC.o:(.text.AFIO_DisableJTAGAndSWD)
+ 80001ec  80001ec        0     1                 $t
+ 80001ed  80001ed       18     1                 AFIO_DisableJTAGAndSWD
+ 8000204  8000204       9e     4         Output/main.o:(.text.main)
+ 8000204  8000204        0     1                 $t
+ 8000205  8000205       9e     1                 main
+ 80002a2  80002a2        2     1         . = ALIGN ( 4 )
+ 80002a4  80002a4        0     1         _etext = .
+20000000 20000000        0     1 .data
+20000000 20000000        0     1         . = ALIGN ( 4 )
+20000000 20000000        0     1         _sdata = .
+20000000 20000000        0     1         . = ALIGN ( 4 )
+20000000 20000000        0     1         _edata = .
+20000000 20000000        0     1 _sidata = LOADADDR ( .data )
+20000000 20000000        0     1 .bss
+20000000 20000000        0     1         . = ALIGN ( 4 )
+20000000 20000000        0     1         _sbss = .
+20000000 20000000        0     1         . = ALIGN ( 4 )
+20000000 20000000        0     1         _ebss = .
+       0        0       41     1 .ARM.attributes
+       0        0       41     1         Output/startup.o:(.ARM.attributes)
+       0        0      2c0     4 .symtab
+       0        0      2c0     4         <internal>:(.symtab)
+       0        0       48     1 .shstrtab
+       0        0       48     1         <internal>:(.shstrtab)
+       0        0      1cd     1 .strtab
+       0        0      1cd     1         <internal>:(.strtab)
